@@ -1,0 +1,9 @@
+Group Member:
+Hongyan Xiao,
+Jiaqi Xia,
+Xiyu Hao,
+Xuelan Qian,
+Chao-Sheng Wu
+
+Data Link:
+https://www.kaggle.com/datasets/cynthiarempel/amazon-us-customer-reviews-dataset
