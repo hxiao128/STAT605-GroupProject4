@@ -2,7 +2,7 @@ library(tidyverse)
 library(tidytext)
 library(SnowballC)
 
-files <- list.files(pattern=".*Apparel.*(tsv)$", 
+files <- list.files(pattern=".*(tsv)$", 
                     recursive=TRUE,
                     full.names=TRUE)
 
