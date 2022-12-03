@@ -1,9 +1,15 @@
-library(dplyr)
+library(tidyverse)
 library(tidytext)
 library(SnowballC)
 
+files <- list.files(pattern=".*Apparel.*(tsv)$", 
+                    recursive=TRUE,
+                    full.names=TRUE)
+
+d <- lapply(files, read_tsv)
+
 # read one file, it should be generalized
-data <- read_tsv('amazon_reviews_us_Apparel_v1_00.tsv')
+data <- d[[1]]
 
 # for demenstration, take partial data
 data2 <- data %>% tail(100)
@@ -24,3 +30,5 @@ word_summary <- reviews.afinn %>%
   summarise(mean_rating = mean(star_rating), score = max(value), count_word = n()) %>%
   arrange(desc(count_word)) %>%
   head(10)
+
+write_csv(word_summary, "word_summary.csv")
