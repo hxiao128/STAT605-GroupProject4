@@ -1,0 +1,37 @@
+---
+title: "Final Report"
+author: "Hongyan Xiao, Jiaqi Xia, Xiyu Hao, Xuelan Qian, Chao-Sheng Wu"
+output: html_notebook
+---
+
+# I. Introduction
+|        In a period of over two decades since the first review in 1995, millions of Amazon customers have contributed over a hundred million reviews to express opinions and describe their experiences regarding products on the Amazon.com website. Our dataset is the collection of reviews written in the Amazon.com marketplace and associated metadata from 1995 until 2015. And we are particularly interested in the star ratings and the review body. The question we want to address is “What are the populars words in reviews for each Amazon category?” To solve this problem, we used a local machine to analyze one category and broadcast our results to all categories by CHTC.
+
+# II. Body
+## A. Data
+|        This is a list of data with more than 34,000 consumer reviews for Amazon products like the Kindle, Fire TV Stick, and more provided by Datafiniti's Product Database. Each line in the data files corresponds to an individual review. The dataset includes basic product information, rating, review text, and more for each product. The size of the original dataset is about 50 GB, and after
+
+## B. Statistical Computation
+### 1. For a single category
+|        We expand each review_body into word vector, then filter out meaningless words by the default stop words in the tidytext package. After that, we count the number of appearances of each term. Finally, we output the top 10 terms to a csv file.
+
+![Figure 1](single_flow.jpg)
+
+### 2. For all categories
+|        We broadcast our single analysis flow to all categories by CHTC. As the figure 2 shows, we let each worker in the distributed system perform the computational steps in the figure1. So, we will get n’s word count files. Each file is corresponding to a specific category and contains the top 10 terms appeared most frequently in that category. 
+
+![Figure 2](distributed_flow.jpg)
+
+|        Also, the number of jobs, runtime for each job, memory and disk space required are listed in the following table.
+
+```{r echo=FALSE, results='asis'}
+library(knitr)
+a <- data.frame("Number of Jobs"=c(NA), 'Runtime'=c(NA), "Memeory"=c(NA), "Disk Space"=c(NA))
+kable(a, caption="CHTC Info")
+```
+
+
+## C. Result
+
+# III. Conclusion
+
