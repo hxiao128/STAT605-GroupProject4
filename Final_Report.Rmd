@@ -24,14 +24,22 @@ output: html_notebook
 
 |        Also, the number of jobs, runtime for each job, memory and disk space required are listed in the following table.
 
-```{r echo=FALSE, results='asis'}
+```{r echo=FALSE, warning=FALSE}
 library(knitr)
+library(readr)
+```
+
+```{r echo=FALSE, results='asis'}
 a <- data.frame("Number of Jobs"=c(NA), 'Runtime'=c(NA), "Memeory"=c(NA), "Disk Space"=c(NA))
 kable(a, caption="CHTC Info")
 ```
 
 
 ## C. Result
+```{r echo=FALSE}
+bady <- read_csv("word_summary1.csv",col_types=cols())
+kable(data.frame(bady), caption="Top 10 Terms for Bady Category")
+```
 
 # III. Conclusion
 
