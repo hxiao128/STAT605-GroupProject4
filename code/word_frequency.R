@@ -3,7 +3,7 @@ library(tidytext)
 library(SnowballC)
 
 files <- list.files(pattern=".*(tsv)$", 
-                    recursive=TRUE,
+                    recursive=FALSE,
                     full.names=TRUE)
 
 d <- lapply(files, read_tsv)
