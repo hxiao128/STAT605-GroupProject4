@@ -1,4 +1,7 @@
-library(tidyverse)
+#library(tidyverse)
+library(readr)
+library(dplyr)
+library(stringr)
 library(tidytext)
 library(SnowballC)
 
@@ -12,10 +15,10 @@ d <- lapply(files, read_tsv)
 data <- d[[1]]
 
 # for demenstration, take partial data
-data2 <- data %>% tail(100)
+data <- data %>% tail(100)
 
 new_stop_words <- append(stop_words$word, "br")
-words <- data2 %>%
+words <- data %>%
   select(review_id, star_rating, review_body) %>%
   unnest_tokens(word, review_body) %>%
   filter(!word %in% new_stop_words, str_detect(word, "^[a-z']+$"))
