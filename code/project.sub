@@ -1,0 +1,21 @@
+# Before running this with "condor_submit project.sub", the
+# directories log, error, and output must exist.
+# if there is no 'filename.txt' run prejob.sh first before running jobs
+
+universe = vanilla
+log    =    log/project$(Cluster)_$(Process).log
+error  =  error/project$(Cluster)_$(Process).err
+output = output/project$(Cluster)_$(Process).out
+
+executable = ./project.sh
+arguments = $(file)
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files = http://proxy.chtc.wisc.edu/SQUID/chtc/R402.tar.gz,, packages.tar.gz, word_frequency.R, /home/groups/STAT_DSCP/group6/archive/$(file).tsv, list_of_1_tsv_files.txt
+
+request_cpus = 1
+request_memory = 100GB
+request_disk = 20GB
+
+queue file from list_of_1_tsv_files.txt
