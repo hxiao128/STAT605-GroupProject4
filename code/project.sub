@@ -10,12 +10,14 @@ output = output/project$(Cluster)_$(Process).out
 executable = ./project.sh
 arguments = $(file)
 
+
 should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
-transfer_input_files = http://proxy.chtc.wisc.edu/SQUID/chtc/R402.tar.gz,, packages.tar.gz, word_frequency.R, /home/groups/STAT_DSCP/group6/archive/$(file).tsv, list_of_1_tsv_files.txt
+transfer_input_files = http://proxy.chtc.wisc.edu/SQUID/chtc/R402.tar.gz, packages.tar.gz, project.R, word_frequency.R, /home/groups/STAT_DSCP/group6/archive/$(file)
+
 
 request_cpus = 1
 request_memory = 100GB
-request_disk = 20GB
+request_disk = 10GB
 
-queue file from list_of_1_tsv_files.txt
+queue 1 file from ls /home/groups/STAT_DSCP/group6/archive/ |

@@ -3,26 +3,30 @@ library(dplyr)
 library(stringi)
 library(tm)
 library(tidytext)
+library(tidyr)
+library(mgsub)
 print("successfully load the packages")
 
 args = (commandArgs(trailingOnly=TRUE))
-if(length(args) == 2){
-  process = as.numeric(args[1])
-  directory = args[2]
-} else {
-  cat('usage: Rscript project.R <process> <directory>\n', file=stderr())
-  stop()
-}
+file = args[1]
+#if(length(args) == 2){
+#  process = as.numeric(args[1])
+#  directory = args[2]
+#} else {
+#  cat('usage: Rscript project.R <process> <directory>\n', file=stderr())
+#  stop()
+#}
 
-no <- 0
+#no <- 0
 
 # Read file ------
-files <- list.files(args[2])
-for (file in files){
-  no <- no + 1 
-  path <- paste(args[2], file, sep = "/")
-  print(paste(no, "% ... Processing ", file, sep = ""))
-  df <- read_tsv(path)
+#files <- list.files(arg[2])
+#files <- list(file)
+#for (file in files){
+  #no <- no + 1 
+  #path <- paste(args[2], file, sep = "/")
+  #print(paste(no, "% ... Processing ", file, sep = ""))
+  df <- read_tsv(file)
   #df <- read_tsv('archive/amazon_reviews_us_Gift_Card_v1_00.tsv')
   df <- filter(df,verified_purchase=="Y")
   
@@ -121,7 +125,6 @@ for (file in files){
     anti_join(ignore.words) %>%
     count(word, sort = TRUE)
   
-  csvname <- paste0(args[2],".csv")
+  csvname <- gsub("tsv", "csv", file)
   write.csv(word.freq.table[0:10,], csvname, row.names = FALSE)
-}
-  
+#}
