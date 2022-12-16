@@ -9,11 +9,10 @@ Team member:
 4. Xiyu HAao (xhao33@wisc.edu)
 5. Xuelan Qian
 
-The purpose of this project is to perform a modern statistical analysis from the **business** dataset. Our methodology includes:
-- **Exploratory Data Analysis**: to investigate the variables' distributions along with the outliers
-- **Data cleansing**: to clean the data by imputing some observations which areirrational and create a new cleaned dataset
-- **Statistical Model**: to construct a model that effectively infers and describes the variables based on the existing data. We also conduct the experiment to select the best model
-- **Shiny App**: to develop a real-time web application based on our model
+The purpose of this project is to select the populars words in reviews for several Amazon product categories. Our data sourced from Kaggle, which link is https://www.kaggle.com/datasets/cynthiarempel/amazon-us-customer-reviews-dataset.
+Our methodology includes:
+- **Statistical Computation**: to construct a model that effectively infers and describes the variables based on the existing data. We also conduct the experiment to select the best model
+- ***Statistical Computation***
 
 ### Content
 #### data
