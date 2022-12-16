@@ -10,9 +10,10 @@ Team member:
 5. Xuelan Qian
 
 The purpose of this project is to select the populars words in reviews for several Amazon product categories. Our data sourced from Kaggle, which link is https://www.kaggle.com/datasets/cynthiarempel/amazon-us-customer-reviews-dataset.
+
 Our methodology includes:
 - **Statistical Computation**: to construct a model that effectively infers and describes the variables based on the existing data. We also conduct the experiment to select the best model
-- ***Statistical Computation***
+- Then, we broadcast our single analysis flow to all categories by CHTC.
 
 ### Content
 #### data
