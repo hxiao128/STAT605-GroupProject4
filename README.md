@@ -7,6 +7,7 @@ Team member:
 2. Jiaqi Xia (jxia53@wisc.edu)
 3. Hongyan Xiao (hxiao66@wisc.edu)
 4. Xiyu HAao (xhao33@wisc.edu)
+5. Xuelan Qian
 
 The purpose of this project is to perform a modern statistical analysis from the **business** dataset. Our methodology includes:
 - **Exploratory Data Analysis**: to investigate the variables' distributions along with the outliers
