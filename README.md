@@ -21,7 +21,7 @@ Our methodology includes:
 #### code
 - This contains R scripts, a shell script, and a sub script for the analysis ranging from reading data, data cleaning, counting words frequency, getting outputs, as well as txt files containing the name of each category.
 
-#### image
+#### plots
 - This contains images obtained from the code and analysis such as figures, tables, and plots.
 
 #### report
